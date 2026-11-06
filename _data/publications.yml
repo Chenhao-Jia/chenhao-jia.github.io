@@ -1,0 +1,126 @@
+# Imported from user-supplied DOI list; publisher-deposited Crossref metadata checked 2026-11-07.
+main:
+  - id: "jia2026lowlatency"
+    title: "A New Optimized Implementation Method for Boolean Functions Towards Low-Latency: Application to S-Boxes"
+    authors:
+      - name: "Chenhao Jia"
+        self: true
+      - name: "Tingting Cui"
+        self: false
+      - name: "Yanhong Fan"
+        self: false
+      - name: "Puwen Wei"
+        self: false
+      - name: "Meiqin Wang"
+        self: false
+    venue: "IACR Transactions on Cryptographic Hardware and Embedded Systems"
+    year: 2026
+    status: published
+    citation:
+      volume: "2026"
+      number: "3"
+      pages: "147--170"
+    links:
+      paper: "https://tches.iacr.org/index.php/TCHES/article/download/13086/12639"
+      doi: "https://doi.org/10.46586/tches.v2026.i3.147-170"
+      bibtex: "/assets/files/jia2026lowlatency.bib"
+  - id: "liu2026chacha"
+    title: "An improved ChaCha algorithm based on quantum random numbers"
+    authors:
+      - name: "Chao Liu"
+        self: false
+      - name: "Shuai Zhao"
+        self: false
+      - name: "Chenhao Jia"
+        self: true
+      - name: "Gengran Hu"
+        self: false
+      - name: "Tingting Cui"
+        self: false
+    venue: "International Journal of Applied Mathematics and Computer Science"
+    year: 2026
+    status: published
+    citation:
+      volume: "36"
+      number: "2"
+      pages: "267--280"
+    links:
+      paper: "https://reference-global.com/article/10.61822/amcs-2026-0018"
+      doi: "https://doi.org/10.61822/amcs-2026-0018"
+      bibtex: "/assets/files/liu2026chacha.bib"
+  - id: "jia2025small"
+    title: "How Small Can S-boxes Be?"
+    authors:
+      - name: "Chenhao Jia"
+        self: true
+      - name: "Tingting Cui"
+        self: false
+      - name: "Qing Ling"
+        self: false
+      - name: "Yan He"
+        self: false
+      - name: "Kai Hu"
+        self: false
+      - name: "Yu Sun"
+        self: false
+      - name: "Meiqin Wang"
+        self: false
+    venue: "IACR Transactions on Symmetric Cryptology"
+    year: 2025
+    status: published
+    citation:
+      volume: "2025"
+      number: "1"
+      pages: "592--622"
+    links:
+      paper: "https://tosc.iacr.org/index.php/ToSC/article/download/12088/11928"
+      doi: "https://doi.org/10.46586/tosc.v2025.i1.592-622"
+      bibtex: "/assets/files/jia2025small.bib"
+  - id: "sun2025addendum"
+    title: "Addendum to How Small Can S-boxes Be?"
+    authors:
+      - name: "Yu Sun"
+        self: false
+      - name: "Lixuan Wu"
+        self: false
+      - name: "Chenhao Jia"
+        self: true
+      - name: "Tingting Cui"
+        self: false
+      - name: "Kai Hu"
+        self: false
+      - name: "Meiqin Wang"
+        self: false
+    venue: "IACR Transactions on Symmetric Cryptology"
+    year: 2025
+    status: published
+    citation:
+      volume: "2025"
+      number: "2"
+      pages: "192--205"
+    links:
+      paper: "https://ojs.ub.rub.de/index.php/ToSC/article/download/12248/12055"
+      doi: "https://doi.org/10.46586/tosc.v2025.i2.192-205"
+      bibtex: "/assets/files/sun2025addendum.bib"
+  - id: "jia2024dbst"
+    title: "Structure attack on full-round DBST"
+    authors:
+      - name: "Chenhao Jia"
+        self: true
+      - name: "Qing Ling"
+        self: false
+      - name: "Ting Wu"
+        self: false
+      - name: "Tingting Cui"
+        self: false
+    venue: "Frontiers of Computer Science"
+    year: 2024
+    status: published
+    citation:
+      volume: "18"
+      number: "4"
+      pages: "184820"
+    links:
+      paper: "https://link.springer.com/content/pdf/10.1007/s11704-024-3438-0.pdf"
+      doi: "https://doi.org/10.1007/s11704-024-3438-0"
+      bibtex: "/assets/files/jia2024dbst.bib"

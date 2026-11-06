@@ -1,0 +1,30 @@
+{% if site.data.publications.main.size > 0 %}
+<section id="publications" aria-labelledby="publications-title">
+  <h2 id="publications-title">Publications</h2>
+  {% assign years = site.data.publications.main | group_by: 'year' | sort: 'name' | reverse %}
+  {% for year in years %}
+  <div class="publication-year">
+    <h3 class="year">{{ year.name | escape }}</h3>
+    <ol class="publication-list">
+    {% for paper in year.items %}
+    <li class="publication" id="{{ paper.id | escape }}">
+      <article aria-labelledby="title-{{ paper.id | escape }}">
+      <h4 id="title-{{ paper.id | escape }}">{{ paper.title | escape }}</h4>
+      <p class="authors">{% for author in paper.authors %}{% if author.self == true %}<strong>{{ author.name | escape }}</strong>{% else %}{{ author.name | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+      <p class="venue"><cite>{{ paper.venue | escape }}</cite>, {{ paper.year }}{% if paper.status == 'accepted' %} <span class="status">Accepted</span>{% elsif paper.status == 'preprint' %} <span class="status">Preprint</span>{% endif %}</p>
+      {% if paper.note and paper.note != '' %}<p class="paper-note">{{ paper.note | escape }}</p>{% endif %}
+      <div class="resource-links">
+      {% assign resource_types = 'paper,code,slides,bibtex,doi' | split: ',' %}
+      {% for type in resource_types %}{% assign resource = paper.links[type] %}{% if resource and resource != '' %}
+      {% case type %}{% when 'paper' %}{% assign label = 'Paper' %}{% when 'code' %}{% assign label = 'Code' %}{% when 'slides' %}{% assign label = 'Slides' %}{% when 'bibtex' %}{% assign label = 'BibTeX' %}{% when 'doi' %}{% assign label = 'DOI' %}{% endcase %}
+      <a href="{% include resource-url.html url=resource %}" aria-label="{{ label }}: {{ paper.title | escape }}">{{ label }}</a>
+      {% endif %}{% endfor %}
+      </div>
+      </article>
+    </li>
+    {% endfor %}
+    </ol>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}

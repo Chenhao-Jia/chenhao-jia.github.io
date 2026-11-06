@@ -1,0 +1,25 @@
+{% assign profile = site.data.profile %}
+{% if profile.avatar and profile.avatar != '' %}
+<span class="image avatar"><img src="{{ profile.avatar | relative_url | escape }}" width="148" height="148" alt="Portrait of {{ profile.name_en | escape }}"></span>
+{% endif %}
+<h1>{{ profile.name_en | default: 'Academic profile' | escape }}</h1>
+{% if profile.name_zh and profile.name_zh != '' %}<p class="chinese-name" lang="zh-Hans">{{ profile.name_zh | escape }}</p>{% endif %}
+<p class="position">{{ profile.position | default: 'Ph.D. Student' | escape }}</p>
+{% if profile.department and profile.department != '' %}<p class="affiliation">{{ profile.department | escape }}</p>{% endif %}
+{% if profile.affiliation and profile.affiliation != '' %}<p class="affiliation institution">{{ profile.affiliation | escape }}</p>{% endif %}
+{% if profile.advisor_name and profile.advisor_name != '' %}<p class="affiliation">Advisor: {% if profile.advisor_url and profile.advisor_url != '' %}<a href="{{ profile.advisor_url | escape }}">{{ profile.advisor_name | escape }}</a>{% else %}{{ profile.advisor_name | escape }}{% endif %}</p>{% endif %}
+<div class="profile-links">
+{% if profile.email_public == true and profile.email and profile.email != '' %}<a href="mailto:{{ profile.email | escape }}">{{ profile.email | escape }}</a>{% endif %}
+{% for link in profile.links %}{% if link[1] and link[1] != '' %}
+{% case link[0] %}{% when 'google_scholar' %}{% assign label = 'Google Scholar' %}{% when 'orcid' %}{% assign label = 'ORCID' %}{% when 'dblp' %}{% assign label = 'DBLP' %}{% when 'github' %}{% assign label = 'GitHub' %}{% when 'cv' %}{% assign label = 'CV' %}{% endcase %}
+{% assign link_url = link[1] %}<a href="{% include resource-url.html url=link_url %}">{{ label }}</a>
+{% endif %}{% endfor %}
+</div>
+<nav aria-label="Sections" class="section-nav">
+<a href="{{ '/' | relative_url }}#about">About</a>
+{% if profile.research_interests.size > 0 %}<a href="{{ '/' | relative_url }}#research">Research</a>{% endif %}
+{% if site.data.publications.main.size > 0 %}<a href="{{ '/' | relative_url }}#publications">Publications</a>{% endif %}
+{% if site.data.projects.size > 0 %}<a href="{{ '/' | relative_url }}#projects">Projects</a>{% endif %}
+{% if site.data.news.size > 0 %}<a href="{{ '/' | relative_url }}#news">News</a>{% endif %}
+{% if site.data.education.size > 0 %}<a href="{{ '/' | relative_url }}#education">Education</a>{% endif %}
+</nav>

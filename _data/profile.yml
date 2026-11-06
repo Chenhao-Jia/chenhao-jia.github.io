@@ -1,0 +1,24 @@
+# Content imported from supplied material; future edits belong here.
+name_en: Chenhao Jia
+name_zh: 贾辰皓
+position: Ph.D. Student
+affiliation: Shandong University
+department: School of Cyber Science and Technology
+advisor_name: Meiqin Wang
+advisor_url: ''
+email: ''
+email_public: false
+bio_zh: 我是2025级博士研究生，研究方向为分组密码、S盒设计与优化及硬件实现。
+bio_en: I am a Ph.D. student who began my doctoral studies in 2025. My research focuses on block ciphers, S-box design and optimization, and hardware implementations.
+research_interests:
+- Block Ciphers
+- S-box Design and Optimization
+- Hardware Implementations
+links:
+  google_scholar: https://scholar.google.com.hk/citations?user=tT6GtUQAAAAJ&hl=zh-CN&oi=sra
+  orcid: ''
+  dblp: ''
+  github: https://github.com/Chenhao-Jia
+  cv: ''
+avatar: /assets/img/portrait.jpg
+content_confirmed: true

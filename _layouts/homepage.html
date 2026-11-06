@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Adapted from Minimal Light homepage.html, CC0; see THIRD_PARTY_NOTICES.md. -->
+<html lang="{{ site.lang | default: 'en' | escape }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% assign profile = site.data.profile %}
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ profile.name_en | default: 'Academic profile' | escape }} | {{ profile.position | default: 'Ph.D. Student' | escape }}</title>
+  <meta name="description" content="{{ profile.bio_en | default: 'Academic profile of a Ph.D. student.' | strip_newlines | escape }}">
+  {% if site.ready_for_publication == true and site.preview_mode != true and site.url != '' %}
+  <link rel="canonical" href="{{ page.url | absolute_url | escape }}">
+  {% else %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrapper">
+    <header class="profile">{% include profile.html %}</header>
+    <main id="main" tabindex="-1">
+      {% if site.preview_mode == true or site.ready_for_publication != true %}<p class="preview-notice">Local preview · Profile awaiting final confirmation</p>{% endif %}
+      {{ content }}
+      <footer class="site-footer">Built with Jekyll &amp; <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a>.</footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* Adapted from Minimal Light minimal-light-no-dark-mode.scss (CC0).
+   Kept the compact profile / academic text structure; responsive grid,
+   local system fonts and accessible links replace demo-only components. */
+$accent: #245d79;
+$ink: #25323b;
+$muted: #5c6872;
+* { box-sizing: border-box; }
+html { scroll-padding-top: 2rem; }
+body { margin: 0; background: #fcfcfa; color: $ink; font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Arial, sans-serif; }
+a { color: $accent; text-decoration-thickness: 1px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+a:hover { color: #153b50; }
+a:focus-visible { outline: 3px solid #b66b27; outline-offset: 4px; border-radius: 2px; }
+.wrapper { max-width: 1080px; margin: 0 auto; padding: 76px 36px 40px; display: grid; grid-template-columns: 232px minmax(0, 1fr); gap: 78px; }
+.profile { text-align: left; position: sticky; top: 40px; align-self: start; min-width: 0; }
+.image.avatar { display: block; margin: 0 0 25px; }
+.image.avatar img { display: block; width: 148px; height: 148px; border-radius: 50%; object-fit: cover; border: 1px solid #e1e5e4; }
+h1, h2, h3, h4 { color: #203d4e; line-height: 1.35; }
+h1 { font-size: 29px; font-weight: 650; letter-spacing: -.7px; margin: 0 0 2px; }
+.chinese-name { font-size: 19px; color: $muted; margin: 0 0 14px; letter-spacing: .14em; }
+.position { font-size: 17px; font-weight: 600; margin: 0 0 9px; }
+.affiliation { color: $muted; font-size: 14px; line-height: 1.6; margin: 0 0 4px; }
+.institution { color: $ink; font-size: 15px; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 6px 15px; margin-top: 20px; font-size: 14px; }
+.section-nav { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; border-top: 1px solid #dde3e5; margin-top: 26px; padding-top: 20px; font-size: 14px; }
+.section-nav a { text-decoration: none; padding: 2px 0; }
+main { min-width: 0; }
+section { margin-bottom: 36px; scroll-margin-top: 25px; }
+h2 { font-size: 23px; font-weight: 600; margin: 0 0 17px; padding-bottom: 10px; border-bottom: 1px solid #dde3e5; letter-spacing: -.3px; }
+p { margin: 0 0 14px; overflow-wrap: anywhere; }
+.preview-notice { color: #63552b; background: #f6f1df; border-left: 3px solid #c4b37c; padding: 9px 13px; font-size: 12px; margin: 0 0 26px; }
+.muted { color: $muted; }
+.research-list { margin: 0; padding-left: 20px; }
+.research-list li { padding-left: 4px; margin: 3px 0; }
+.publication-year { display: grid; grid-template-columns: 43px minmax(0, 1fr); gap: 17px; margin-top: 24px; }
+.year { color: $muted; font-size: 14px; font-weight: 600; margin: 3px 0 0; }
+.publication-list { list-style: none; padding: 0; margin: 0; min-width: 0; }
+.publication { padding: 0 0 24px; margin: 0 0 22px; border-bottom: 1px solid #e6e9e9; overflow-wrap: anywhere; }
+.publication:last-child { margin-bottom: 0; }
+.publication h4 { font-size: 17px; font-weight: 650; margin: 0 0 7px; color: $ink; line-height: 1.5; }
+.authors { font-size: 14px; color: $muted; line-height: 1.7; margin-bottom: 4px; }
+strong { font-weight: 700; color: $ink; }
+.venue { font-size: 14px; margin-bottom: 9px; }
+cite { font-style: italic; }
+.status { font-size: 11px; border: 1px solid #d4dfe4; border-radius: 3px; padding: 2px 5px; margin-left: 5px; white-space: nowrap; }
+.paper-note { font-size: 13px; color: $muted; }
+.resource-links { display: flex; flex-wrap: wrap; gap: 7px; }
+.resource-links a { border: 1px solid #cbd9df; border-radius: 4px; padding: 1px 9px; font-size: 12px; line-height: 1.8; text-decoration: none; background: #fff; }
+.resource-links a:hover { background: #edf3f5; }
+.project { margin-bottom: 24px; }
+.project h3, .education-list h3 { font-size: 17px; margin: 0 0 5px; }
+.news-list, .education-list { list-style: none; padding: 0; margin: 0; }
+.news-list li { display: flex; gap: 18px; margin-bottom: 12px; }
+.news-list time { font-size: 13px; color: $muted; flex: 0 0 75px; padding-top: 3px; }
+.education-list li { margin-bottom: 18px; }
+.education-list p { font-size: 14px; margin: 0; }
+.education-list .muted { font-size: 13px; }
+.site-footer { margin-top: 32px; padding-top: 19px; border-top: 1px solid #dde3e5; font-size: 11px; color: $muted; }
+.skip-link { position: absolute; top: -100px; left: 16px; background: #fff; padding: 10px 15px; z-index: 2; }
+.skip-link:focus { top: 12px; }
+@media (max-width: 960px) {
+  .wrapper { max-width: 760px; grid-template-columns: minmax(0, 1fr); gap: 35px; padding: 38px 30px; }
+  .profile { position: static; }
+  .image.avatar { float: right; margin: 0 0 16px 20px; }
+  .section-nav { flex-direction: row; flex-wrap: wrap; gap: 7px 22px; clear: both; padding-top: 16px; margin-top: 20px; }
+  .preview-notice { margin-bottom: 22px; }
+}
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .wrapper { padding: 30px 22px; gap: 28px; }
+  h1 { font-size: 26px; }
+  .image.avatar img { width: 94px; height: 94px; }
+  .image.avatar { margin-left: 12px; }
+  .profile .affiliation { clear: both; }
+  h2 { font-size: 22px; }
+  .publication-year { display: block; margin-top: 20px; }
+  .year { margin-bottom: 13px; }
+  .publication h4 { font-size: 16px; }
+  .resource-links a { padding: 3px 11px; }
+}
+@media print {
+  body { background: #fff; font-size: 11pt; }
+  .wrapper { display: block; padding: 0; }
+  .profile { position: static; margin-bottom: 30px; }
+  .section-nav, .skip-link { display: none; }
+  .publication { break-inside: avoid; }
+}

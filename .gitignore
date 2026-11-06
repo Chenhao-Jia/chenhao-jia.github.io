@@ -1,0 +1,14 @@
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+/.sass-cache/
+/.bundle/
+/vendor/
+/.local/
+/.tools/
+/PROFILE_INPUT*.yml
+*.log
+.DS_Store
+Thumbs.db
+~$*
+.~*

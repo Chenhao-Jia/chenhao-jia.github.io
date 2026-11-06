@@ -9,7 +9,7 @@ html { scroll-padding-top: 2rem; }
 body { margin: 0; background: #fcfcfa; color: $ink; font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Arial, sans-serif; }
 a { color: $accent; text-decoration-thickness: 1px; text-underline-offset: 3px; overflow-wrap: anywhere; }
 a:hover { color: #153b50; }
-a:focus-visible { outline: 3px solid #b66b27; outline-offset: 4px; border-radius: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #b66b27; outline-offset: 4px; border-radius: 2px; }
 .wrapper { max-width: 1080px; margin: 0 auto; padding: 76px 36px 40px; display: grid; grid-template-columns: 232px minmax(0, 1fr); gap: 78px; }
 .profile { text-align: left; position: sticky; top: 40px; align-self: start; min-width: 0; }
 .image.avatar { display: block; margin: 0 0 25px; }
@@ -29,6 +29,9 @@ h2 { font-size: 23px; font-weight: 600; margin: 0 0 17px; padding-bottom: 10px; 
 p { margin: 0 0 14px; overflow-wrap: anywhere; }
 .preview-notice { color: #63552b; background: #f6f1df; border-left: 3px solid #c4b37c; padding: 9px 13px; font-size: 12px; margin: 0 0 26px; }
 .muted { color: $muted; }
+.bio-translation { margin-top: 14px; font-size: 14px; }
+.bio-translation summary { color: $accent; cursor: pointer; width: fit-content; }
+.bio-translation p { margin-top: 10px; line-height: 1.9; }
 .research-list { margin: 0; padding-left: 20px; }
 .research-list li { padding-left: 4px; margin: 3px 0; }
 .publication-year { display: grid; grid-template-columns: 43px minmax(0, 1fr); gap: 17px; margin-top: 24px; }

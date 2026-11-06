@@ -4,6 +4,12 @@
   {% if profile.bio_en and profile.bio_en != '' %}
   {% assign paragraphs = profile.bio_en | split: '\n\n' %}{% for paragraph in paragraphs %}<p>{{ paragraph | escape | newline_to_br }}</p>{% endfor %}
   {% else %}<p class="muted">A short biography will be added after the profile is confirmed.</p>{% endif %}
+  {% if profile.bio_zh and profile.bio_zh != '' %}
+  <details class="bio-translation" lang="zh-Hans">
+    <summary>中文简介</summary>
+    <p>{{ profile.bio_zh | escape | newline_to_br }}</p>
+  </details>
+  {% endif %}
 </section>
 {% if profile.research_interests.size > 0 %}
 <section id="research" aria-labelledby="research-title">

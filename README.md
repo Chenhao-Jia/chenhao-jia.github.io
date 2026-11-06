@@ -50,6 +50,8 @@ bundle exec jekyll serve --config _config.yml,_config.preview.yml --host 127.0.0
 
 上级 `PROFILE_INPUT.yml` 只是首次导入表，**后续以本目录 `_data/*.yml` 为唯一内容维护入口**，不用同步改输入表和首页。正式资料文件夹内的 `01_在读学生信息采集表.docx` 已补全中英文简介；原件备份在上级 `.local/backups/`。原始 DOCX、XLSX、压缩包和输入表都留在网站源码目录之外。
 
+`bio_en` 是默认英文简介，`bio_zh` 显示在 About 下可展开的“中文简介”中；中文为空时该入口隐藏。网站不会直接读取私人 Word 文档，更新资料表后需将确认的简介同步到这里。
+
 简介、论文题目、作者和说明按普通文本转义，不执行其中的 HTML，也不把个人简介当作任意 Markdown。包含冒号、引号时可用 YAML 双引号并转义内部双引号，例如 `note: "Talk title: \"S-box Optimization\""`。多行简介可用：
 
 ```yaml

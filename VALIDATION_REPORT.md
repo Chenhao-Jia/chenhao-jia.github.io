@@ -99,7 +99,7 @@ DOCX 的标准渲染脚本已尝试，但因未安装 LibreOffice 失败；使�
 
 详细逐项记录在上级 `.local/external-link-check.json`；DOI 元数据证据在上级 `.local/evidence.json` 及 Crossref 缓存。外链受阻保留为“未确认”，没有伪装成全部可达或全部失效。
 
-## 实际部署与线上证据
+## 首次部署与线上证据
 
 **已上线：[https://chenhao-jia.github.io/](https://chenhao-jia.github.io/)。** 本人明确授权后，将审查过的站点源码正常推送至 [Chenhao-Jia/chenhao-jia.github.io](https://github.com/Chenhao-Jia/chenhao-jia.github.io) 的 `main`。没有强制推送或覆盖已有仓库；原始资料、私人输入表、备份和运行时继续留在公开仓库之外。
 
@@ -126,3 +126,12 @@ DOCX 的标准渲染脚本已尝试，但因未安装 LibreOffice 失败；使�
 本节部署 SHA 指网站产物对应的代码提交。README、部署说明、待办和验证报告均从网页产物中排除；后续纯文档提交可能使仓库 HEAD 与已部署代码 SHA 不同，不改变当前网站产物。
 
 当前没有阻止上线的待补事项。CV、导师网址、代码或 Slides 等可选资料可按真实提供情况继续补充；外链网络受限、浏览器禁用 JavaScript 模式未单独验证等限制仍如上所述，维护与回退方法见 `DEPLOYMENT.md`。
+
+## 英文简介更新 2026-11-07
+
+- 按本人更新的中文简介，将 Word 对应英文补入山东大学及学院信息；仅修改英文内容控件，中文原文与其他内容保持不变，原件另作本地备份。
+- Word 全部一页经原生 Word 导出及 PNG 目视检查通过，没有裁切、重叠或多余页面。标准渲染器仍受缺少 LibreOffice 限制。
+- 网站英文与 Word 英文逐字核对一致。根据本人最新要求，网站仅显示英文简介；中文简介正文、展开入口及相关样式已删除，公开数据中的 `bio_zh` 为空。
+- 生产内容验证、Jekyll 构建及站内检查通过；GitHub Actions 对最终网站版本完成全部检查、生产构建和部署，运行 [42272660407](https://github.com/Chenhao-Jia/chenhao-jia.github.io/actions/runs/42272660407) 结论为 success，代码提交为 `d89886720e6a390f65637cd90be983108d26b08e`。
+- 公开首页返回 HTTP 200；实际浏览器确认新英文已显示，中文简介和入口不存在，头像加载正常，桌面无横向溢出，控制台未观察到 warning/error。
+- 最新网站截图位于公开仓库之外的 `.local/screenshots/updated-english-bio.jpg`。私人 Word、备份与排版检查图未上传。

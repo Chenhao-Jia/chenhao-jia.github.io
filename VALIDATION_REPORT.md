@@ -1,6 +1,6 @@
 # 第一版实际验证记录
 
-验证日期：2026-11-07（Asia/Shanghai）。交付状态：**用户已明确授权公开发布；预览与生产构建、检查及测试通过；远程部署进行中，尚未验证上线。**
+验证日期：2026-11-07（Asia/Shanghai）。交付状态：**用户已明确授权公开发布；预览与生产构建、检查及测试通过；源码已推送，GitHub Actions Pages 部署成功，线上页面及核心资源已验证 HTTP 200。**
 
 ## 材料与实现
 
@@ -9,7 +9,7 @@
 - 原 DOCX 仅补全两个中英文简介内容控件，其他 OOXML 内容与备份对照一致。原件备份在上级 `.local/backups/`，根目录已生成 `PROFILE_INPUT.yml`，不会被网站读取或公开。
 - Minimal Light 官方源码下载至临时目录，取得提交 `dd114c3fef2d97adc1c6b6d46901e0d96ab83a7c`。本地改造布局及浅色样式，清除演示身份、照片、论文、域名、Analytics、外部字体和图标脚本。源码来源及许可见 `THIRD_PARTY_NOTICES.md`。
 - 主页实际显示头像、姓名、博士生身份、Shandong University、School of Cyber Science and Technology、导师 Meiqin Wang、About、Research Interests、五篇论文、Scholar 和 GitHub。论文按年倒序，同年按 YAML 顺序；本人署名由显式 `self: true` 加粗。Paper、DOI、本地 BibTeX 有依据才显示。没有 Code、Slides、CV 或完整教育资料时不生成入口或空栏目。
-- 网站在独立的 `academic-site/`，本地分支为 `main`。用户已明确授权公开发布；已通过认证 GitHub API 创建公开仓库 `Chenhao-Jia/chenhao-jia.github.io`（HTTP 201），远程默认分支为 `main`，创建时为空，没有覆盖既有内容。推送及部署结果将在末节补充。
+- 网站在独立的 `academic-site/`，本地分支为 `main`。用户已明确授权公开发布；已通过认证 GitHub API 创建公开仓库 `Chenhao-Jia/chenhao-jia.github.io`（HTTP 201），远程默认分支为 `main`，创建时为空，没有覆盖既有内容。源码已正常推送，部署及线上证据见末节。
 
 ## 实际运行环境
 
@@ -48,7 +48,7 @@ bundle exec ruby scripts/test_site.rb
 - 产物检查：通过。检查站内路径、编码文件名、fragment、CSS/图片/附件、重复 HTML ID、空链接、核心远程资源、演示残留，以及源码/资料文件隔离。预览覆盖配置仍有 `noindex`；正式 production 产物已无预览提示和 noindex，canonical 为 `https://chenhao-jia.github.io/`，sitemap 与 robots 地址一致。
 - 授权后的正式发布检查：实际运行 `bundle exec ruby scripts/validate_content.rb --mode production`、`JEKYLL_ENV=production` 下的 `bundle exec jekyll build --config _config.yml --trace` 和 `bundle exec ruby scripts/check_site.rb _site`，全部通过。两项内容确认布尔值均为 `true`，BibTeX 同步及全部 7 组回归测试通过。
 - 源码公开范围：检查 Git 候选文件，未发现原始 DOCX/XLSX/压缩包、学号、私人邮箱、凭据模式或工具缓存。照片没有 EXIF/GPS 信息。`exclude` 和 `.gitignore` 分别管理网页产物与未跟踪源码，不能替代公开前人工审核。
-- 工作流 YAML 解析及权限/条件检查：通过；当前官方 Actions 版本已核对。远程运行尚未验证。
+- 工作流 YAML 解析及权限/条件检查：通过；当前官方 Actions 版本已核对。远程运行 [42270666738](https://github.com/Chenhao-Jia/chenhao-jia.github.io/actions/runs/42270666738) 的检查、生产构建和部署三个作业均成功，Linux CI 与 Pages 部署已实际验证。
 
 ## 临时夹具回归
 
@@ -99,10 +99,30 @@ DOCX 的标准渲染脚本已尝试，但因未安装 LibreOffice 失败；使�
 
 详细逐项记录在上级 `.local/external-link-check.json`；DOI 元数据证据在上级 `.local/evidence.json` 及 Crossref 缓存。外链受阻保留为“未确认”，没有伪装成全部可达或全部失效。
 
-## 部署状态与剩余事项
+## 实际部署与线上证据
 
-**远程部署进行中，尚未验证上线。** 用户已明确授权公开发布；公开目标仓库 `Chenhao-Jia/chenhao-jia.github.io` 已通过认证 API 创建（HTTP 201），默认分支 `main`。当前记录仅证明仓库创建和本地生产检查通过，不声称源码已推送或网页已上线；推送、Actions、Pages artifact、部署 ID 和线上访问结果待远程流程返回后补充。
+**已上线：[https://chenhao-jia.github.io/](https://chenhao-jia.github.io/)。** 本人明确授权后，将审查过的站点源码正常推送至 [Chenhao-Jia/chenhao-jia.github.io](https://github.com/Chenhao-Jia/chenhao-jia.github.io) 的 `main`。没有强制推送或覆盖已有仓库；原始资料、私人输入表、备份和运行时继续留在公开仓库之外。
 
-工作流在部署开关未设置时仅检查；PR 只读且不发布；获准部署只允许默认分支 push/manual，要求前置检查与生产内容验证成功，只上传 `_site/`。Pages 元数据调用位于获准流程，部署作业单独具有 `pages: write` / `id-token: write` 与 `github-pages` 环境。
+| 项目 | 实际结果 |
+| --- | --- |
+| 网站代码提交 | `9e1f9394f352d2d96d9c34d9248461a8d3f22280` |
+| 自定义工作流 | [42270666738](https://github.com/Chenhao-Jia/chenhao-jia.github.io/actions/runs/42270666738)，结论 success |
+| 三个作业 | check、生产 artifact 构建、deploy 全部 success |
+| Pages artifact | ID `13528578903`，名称 `github-pages`，仅包含 `_site/` |
+| 部署记录 | ID `7607721833`，环境 `github-pages`，最新状态 success |
+| Pages 设置 | 发布来源为 workflow；`PAGES_DEPLOY_ENABLED=true`；HTTPS 已启用 |
+| 首页 | HTTP 200，正确姓名及 Shandong University，五篇论文，无预览提示或 noindex |
+| 核心资源 | CSS、头像、第一篇本地 BibTeX、robots、sitemap、404.html 均返回 HTTP 200 |
 
-已配置本人确认的 `Chenhao-Jia`、目标仓库 `chenhao-jia.github.io` 及预期域名 `https://chenhao-jia.github.io`；目标仓库和默认分支已核对，本次公开授权已取得。剩余工作是完成推送、启用 GitHub Actions Pages 发布来源及仓库部署变量、等待部署结果并验证线上页面。CV 等可选信息不阻止发布，维护与重部署方法见 `DEPLOYMENT.md`。
+线上浏览器复核也已完成：实际打开 HTTPS 域名，canonical 正确、五篇论文和头像正常加载，没有预览提示；1440 px 视口的 scrollWidth 为 1425 px，375 px 视口为 360 px（正文宽 316 px），均无横向溢出。手机端 Publications 锚点跳转正常，控制台未观察到 warning/error。线上代表性截图存放在公开仓库之外：
+
+- `.local/screenshots/published-desktop-1440.jpg`
+- `.local/screenshots/published-mobile-375.jpg`
+
+首次推送曾产生 GitHub 的旧式默认 Pages 运行 `42270503196`，为保留唯一自定义发布流程已取消；随后自定义推送运行 `42270510590` 的检查通过，当时部署开关未设置，因此未发布。开启获准开关后的完整自定义工作流 `42270666738` 成功部署。Pages 顶层元数据仍残留已取消旧运行的 `errored`，当前真实部署记录为 success，网站和核心资源均为 HTTP 200；不为消除旧状态而改回分支发布。
+
+工作流在部署开关未设置时仍仅检查；PR 只读且不发布。默认分支 push/manual 必须通过前置检查和生产内容验证才发布，只上传 `_site/`。Pages 元数据调用位于获准流程，部署作业单独具有 `pages: write` / `id-token: write` 与 `github-pages` 环境。
+
+本节部署 SHA 指网站产物对应的代码提交。README、部署说明、待办和验证报告均从网页产物中排除；后续纯文档提交可能使仓库 HEAD 与已部署代码 SHA 不同，不改变当前网站产物。
+
+当前没有阻止上线的待补事项。CV、导师网址、代码或 Slides 等可选资料可按真实提供情况继续补充；外链网络受限、浏览器禁用 JavaScript 模式未单独验证等限制仍如上所述，维护与回退方法见 `DEPLOYMENT.md`。

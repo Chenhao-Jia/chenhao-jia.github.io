@@ -1,6 +1,6 @@
 # 个人学术主页维护说明
 
-这是基于 Minimal Light 源码改造的 Jekyll 单页学术主页，以英文展示简介、研究方向和论文。内容通过 YAML 维护，不需要修改 HTML。本人已明确授权公开发布，生产检查及测试通过；远程部署进行中，尚未验证上线。实际构建、浏览器检查和环境限制以 [VALIDATION_REPORT.md](VALIDATION_REPORT.md) 为准。
+这是基于 Minimal Light 源码改造的 Jekyll 单页学术主页，以英文展示简介、研究方向和论文。内容通过 YAML 维护，不需要修改 HTML。本人已授权公开发布，生产检查及全部测试通过，网站已上线：[chenhao-jia.github.io](https://chenhao-jia.github.io/)。实际构建、浏览器检查和环境限制以 [VALIDATION_REPORT.md](VALIDATION_REPORT.md) 为准。
 
 ## 本机预览
 
@@ -59,7 +59,7 @@ bio_en: |
   and hardware implementations.
 ```
 
-不要直接照抄未确认的示例身份字段。本人已确认 GitHub 用户名 `Chenhao-Jia`，并更新正式输入表中的学校 `Shandong University`、院系 `School of Cyber Science and Technology` 和导师 `Meiqin Wang`，这些信息已同步到网站数据。导师网址仍为空。站点配置地址为 `https://chenhao-jia.github.io`，本地分支为 `main`；公开仓库 `Chenhao-Jia/chenhao-jia.github.io` 已创建，默认分支为 `main`；推送与 Pages 部署结果见验证报告，不以仓库创建代表已上线。
+不要直接照抄未确认的示例身份字段。本人已确认 GitHub 用户名 `Chenhao-Jia`，并更新正式输入表中的学校 `Shandong University`、院系 `School of Cyber Science and Technology` 和导师 `Meiqin Wang`，这些信息已同步到网站数据。导师网址仍为空。站点配置地址为 `https://chenhao-jia.github.io`，本地分支为 `main`；源码已推送到公开仓库 `Chenhao-Jia/chenhao-jia.github.io` 的 `main`，GitHub Actions 的检查、生产构建与 Pages 部署均成功；上线证据见验证报告。
 
 ## 添加或修改论文
 

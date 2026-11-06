@@ -8,7 +8,7 @@
 - 公开仓库 `Chenhao-Jia/chenhao-jia.github.io` 已通过认证 GitHub API 创建（HTTP 201），默认分支 `main`；创建时为空仓库，没有覆盖既有远程内容。
 - 姓名、英文简介、学校、院系、导师、论文、照片和资源已整理为公开版本；`content_confirmed` 与 `ready_for_publication` 均为 `true`。
 - 生产内容验证、实际 `JEKYLL_ENV=production` 构建、站内产物检查及全部 7 组回归测试通过。私人邮箱仍不公开，原始资料与输入表继续留在网站仓库之外。
-- 远程推送、Actions 和 Pages 部署正在执行；尚未验证上线，最终结果和证据见 `VALIDATION_REPORT.md`。无需为可选资料拖延发布。
+- 源码已正常推送到 `main`，GitHub Actions 的检查、生产构建和 Pages 部署均成功；网站 [https://chenhao-jia.github.io/](https://chenhao-jia.github.io/) 已返回 HTTP 200。当前没有阻止上线的待补事项，详细证据见 `VALIDATION_REPORT.md`。
 
 ## 可以稍后补充
 
